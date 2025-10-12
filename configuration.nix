@@ -121,6 +121,7 @@
     vim
     neovim
     git
+    gh
     wget
     bitwarden
     alacritty
