@@ -101,7 +101,7 @@
 
   # Nvidia graphics settings
   hardware.nvidia.modesetting.enable = true;
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -118,7 +118,6 @@
   # allow to use opensource nvidia drivers
   hardware.nvidia.open = true;
   hardware.nvidia.nvidiaSettings = true;
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
   programs.gamemode.enable = true;
 
   # Allow unfree packages
@@ -139,6 +138,7 @@
     heroic
     lutris
     bottles
+    discord
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
