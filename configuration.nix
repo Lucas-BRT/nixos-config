@@ -84,7 +84,7 @@
   users.users.lucasbrt = {
     isNormalUser = true;
     description = "lucasbrt";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
       steam
     ];
@@ -139,7 +139,12 @@
     lutris
     bottles
     discord
+    tmux
   ];
+
+  virtualisation.docker = {
+    enable = true;
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
