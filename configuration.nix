@@ -110,7 +110,16 @@
   programs.steam = {
       remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
       dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+      gamescopeSession.enable = true;
   };
+
+  # Setup Drivers
+  services.xserver.videoDrivers = ["nvidia"];
+  # allow to use opensource nvidia drivers
+  hardware.nvidia.open = true;
+  hardware.nvidia.nvidiaSettings = true;
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
+  programs.gamemode.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -126,6 +135,10 @@
     bitwarden
     alacritty
     zed-editor
+    mangohud
+    heroic
+    lutris
+    bottles
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
