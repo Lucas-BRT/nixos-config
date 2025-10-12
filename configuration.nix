@@ -140,6 +140,7 @@
     bottles
     discord
     tmux
+    onlyoffice-bin
   ];
 
   virtualisation.docker = {
