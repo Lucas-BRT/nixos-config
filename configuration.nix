@@ -141,6 +141,9 @@
     discord
     tmux
     onlyoffice-bin
+    obsidian
+    gemini-cli
+    megasync
   ];
 
   virtualisation.docker = {
