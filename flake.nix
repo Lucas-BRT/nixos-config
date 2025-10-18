@@ -14,7 +14,7 @@
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
     in {
-      nixosConfiguration = {
+      nixosConfigurations = {
         desktop = nixpkgs.lib.nixosSystem {
           inherit system;
           inherit specialArgs;

@@ -57,12 +57,14 @@
     };
     programs.gamemode.enable = true;
 
+    # Shell extra configs
+    programs.fish.enable = true;
+
     # Allow non-free software
     nixpkgs.config.allowUnfree = true;
 
     # Services
     services.openssh.enable = true;
-    services.docker.enable = true;
     virtualisation.docker = {
       enable = true;
     };
