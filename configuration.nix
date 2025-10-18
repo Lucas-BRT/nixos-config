@@ -45,9 +45,10 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  # Enable the COSMIC Desktop Environment.
+  services.displayManager.cosmic-greeter.enable = true;
+  services.desktopManager.cosmic.enable = true;
+  services.desktopManager.cosmic.xwayland.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -99,6 +100,7 @@
     libvdpau-va-gl
   ];
 
+
   # Nvidia graphics settings
   hardware.nvidia.modesetting.enable = true;
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
@@ -113,10 +115,17 @@
       gamescopeSession.enable = true;
   };
 
+  services.ollama = {
+    enable = true;
+    package = pkgs.ollama;
+    acceleration = "cuda";
+  };
+
+
   # Setup Drivers
   services.xserver.videoDrivers = ["nvidia"];
-  # allow to use opensource nvidia drivers
-  hardware.nvidia.open = true;
+  # allow to use opensource nvidia drivers # turned off to test local IA
+  hardware.nvidia.open = false;
   hardware.nvidia.nvidiaSettings = true;
   programs.gamemode.enable = true;
 
@@ -144,10 +153,30 @@
     obsidian
     gemini-cli
     megasync
+    clang
+    gcc
+    rustup
+    sqlx-cli
+    pkg-config
+    openssl
+    libpq
+    curl
+    cudatoolkit
+    mission-center
   ];
+
+  # GPU persistance
+  systemd.services.nvidia-persistenced.enable = true;
 
   virtualisation.docker = {
     enable = true;
+  };
+
+
+  environment.variables = {
+    CUDA_PATH = "${pkgs.cudatoolkit}";
+    LD_LIBRARY_PATH = "${pkgs.cudatoolkit}/lib";
+    OLLAMA_GPU = "cuda";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
