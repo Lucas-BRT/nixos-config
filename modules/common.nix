@@ -59,6 +59,7 @@
 
     # Shell extra configs
     programs.fish.enable = true;
+    users.defaultUserShell = pkgs.fish;
 
     # Allow non-free software
     nixpkgs.config.allowUnfree = true;
@@ -94,7 +95,6 @@
     users.users.lucasbrt = {
         isNormalUser = true;
         extraGroups = [ "networkmanager" "wheel" "docker" ];
-        shell = pkgs.fish;
     };
 
     system.stateVersion = "25.05";
