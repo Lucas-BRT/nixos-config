@@ -26,6 +26,8 @@
         gcc
         gemini-cli
         pkg-config
+	nodejs_24
+	zola
 
         # Languages
         rustup
