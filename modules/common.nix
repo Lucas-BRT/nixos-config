@@ -26,11 +26,13 @@
         gcc
         gemini-cli
         pkg-config
-	nodejs_24
 	zola
 
         # Languages
         rustup
+	cabal-install
+	ghc
+	nodejs_24
 
         # Gaming
         heroic
