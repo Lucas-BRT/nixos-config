@@ -29,6 +29,17 @@
 	zola
 
         # Languages
+	rustc
+	cargo
+	rust-analyzer
+	clippy
+	rustfmt
+	cargo-watch
+	cargo-edit
+	cargo-outdated
+	cargo-audit
+	cargo-nextest
+	
         rustup
 	cabal-install
 	ghc
