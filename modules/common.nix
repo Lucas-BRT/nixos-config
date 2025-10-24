@@ -8,6 +8,9 @@
     # Timezone and Internalization
     time.timeZone = "America/Fortaleza";
 
+    # Setup experimental features
+    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
     # System Packages
     environment.systemPackages = with pkgs; [
         # Sys and Tools
@@ -44,6 +47,7 @@
 	cabal-install
 	ghc
 	nodejs_24
+	python314
 
         # Gaming
         heroic
