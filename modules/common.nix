@@ -16,6 +16,7 @@
         # Sys and Tools
         vim
         neovim
+	wl-clipboard
         fish
         git
         gh
@@ -67,6 +68,16 @@
         sqlx-cli
         mission-center
     ];
+
+    programs.neovim = {
+	enable = true;
+	defaultEditor = true;
+	configure = {
+		customRC = ''
+		set clipboard=unnamedplus
+'';
+	};
+    };
 
     # Gaming extra configs
     programs.steam = {
