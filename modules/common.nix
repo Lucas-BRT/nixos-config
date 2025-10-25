@@ -31,6 +31,8 @@
         gemini-cli
         pkg-config
 	zola
+	vivaldi
+	asciinema
 
         # Languages
 	rustc
