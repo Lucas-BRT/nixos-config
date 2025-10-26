@@ -33,6 +33,8 @@
 	zola
 	vivaldi
 	asciinema
+	helix
+	zellij
 
         # Languages
 	rustc
@@ -71,17 +73,9 @@
         mission-center
     ];
 
-    programs.neovim = {
-	enable = true;
-	defaultEditor = true;
-	configure = {
-		customRC = ''
-		set clipboard=unnamedplus
-'';
-	};
-    };
+ 
 
-    # Gaming extra configs
+ #Gaming extra configs
     programs.steam = {
         remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
         dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
