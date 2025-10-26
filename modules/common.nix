@@ -20,6 +20,13 @@
     curl
     openssl
     distrobox
+    cosmic-ext-calculator
+    cosmic-ext-tweaks
+  ];
+
+  fonts.packages = with pkgs; [
+    fira-code
+    fira-code-symbols
   ];
 
   #Gaming extra configs
