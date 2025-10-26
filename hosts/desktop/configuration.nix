@@ -23,10 +23,11 @@
         package = pkgs.ollama;
         acceleration = "cuda";
     };
+
     environment.systemPackages = with pkgs; [
-      # Install CUDA for AI Aceleration
-      cudatoolkit
+        cudatoolkit
     ];
+
     environment.variables = {
         CUDA_PATH = "${pkgs.cudatoolkit}";
         LD_LIBRARY_PATH = "${pkgs.cudatoolkit}/lib";

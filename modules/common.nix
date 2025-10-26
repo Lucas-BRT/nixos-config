@@ -13,64 +13,9 @@
 
     # System Packages
     environment.systemPackages = with pkgs; [
-        # Sys and Tools
-        vim
-        neovim
-	wl-clipboard
         fish
-        git
-        gh
-        wget
-        alacritty
-        tmux
-        libpq
         curl
         openssl
-        clang
-        gcc
-        gemini-cli
-        pkg-config
-	zola
-	vivaldi
-	asciinema
-	helix
-	zellij
-
-        # Languages
-	rustc
-	cargo
-	rust-analyzer
-	clippy
-	rustfmt
-	cargo-watch
-	cargo-edit
-	cargo-outdated
-	cargo-audit
-	cargo-nextest
-	
-        rustup
-	cabal-install
-	ghc
-	nodejs_24
-	python314
-
-        # Gaming
-        heroic
-        mangohud
-        lutris
-        bottles
-        discord
-        steam
-
-        # Utils
-        firefox
-        bitwarden
-        zed-editor
-        onlyoffice-bin
-        obsidian
-        megasync
-        sqlx-cli
-        mission-center
     ];
 
  
