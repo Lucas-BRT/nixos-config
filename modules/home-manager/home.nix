@@ -78,6 +78,7 @@
     megasync
     sqlx-cli
     mission-center
+    boxbuddy
   ];
 
   home.stateVersion = "24.05";
