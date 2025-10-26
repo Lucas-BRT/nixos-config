@@ -41,7 +41,6 @@
     tmux
     libpq
     clang
-    gcc
     gemini-cli
     pkg-config
     zola
@@ -51,11 +50,6 @@
     zellij
 
     # Languages
-    rustc
-    cargo
-    rust-analyzer
-    clippy
-    rustfmt
     cargo-watch
     cargo-edit
     cargo-outdated
