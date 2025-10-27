@@ -80,6 +80,7 @@
     obsidian
     megasync
     sqlx-cli
+    telegram-desktop
     mission-center
     boxbuddy
   ];
