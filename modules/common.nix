@@ -29,6 +29,14 @@
     fira-code-symbols
   ];
 
+  programs.nix-ld = {
+    enable = true;
+    libraries = [
+      pkgs.zlib
+      pkgs.openssl
+    ];
+  };
+
   #Gaming extra configs
   programs.steam = {
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
