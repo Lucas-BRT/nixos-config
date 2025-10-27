@@ -60,6 +60,9 @@
     ghc
     nodejs_24
     python314
+    nil
+    nixd
+    nixdoc
 
     # Gaming
     heroic
@@ -87,7 +90,38 @@
       "nix"
       "toml"
       "rust"
+      "Discord Presence"
     ];
+    userKeymaps = [
+      {
+        "context" = "Editor && vim_mode == normal && vim_operator == none && !VimWaiting";
+        "bindings" = {
+          "space w" = "workspace::Save";
+          "space s f" = "file_finder::Toggle";
+          "space s t" = "pane::DeploySearch";
+          "space c" = "pane::CloseActiveItem";
+          "ctrl-t" = "terminal_panel::ToggleFocus";
+          "g d" = "editor::GoToDefinition";
+        };
+      }
+      {
+        "context" = "Editor && vim_mode == normal";
+        "bindings" = {
+          "shift-j" = "pane::ActivatePreviousItem";
+          "shift-k" = "pane::ActivateNextItem";
+          "ctrl-h" = "project_panel::ToggleFocus";
+        };
+      }
+      {
+        "context"=  "Dock && vim_mode == normal";
+        "bindings" = {
+          "ctrl-l" = "project_panel::ToggleFocus";
+          "a" = "project_panel::NewFile";
+          "D" = "project_panel::Delete";
+        };
+      }
+    ];
+
     userSettings = {
       "vim_mode" = true;
       "ui_font_size" = 16;
