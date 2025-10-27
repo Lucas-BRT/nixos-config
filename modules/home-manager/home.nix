@@ -113,7 +113,7 @@
         };
       }
       {
-        "context"=  "Dock && vim_mode == normal";
+        "context" = "Dock && vim_mode == normal";
         "bindings" = {
           "ctrl-l" = "project_panel::ToggleFocus";
           "a" = "project_panel::NewFile";
@@ -134,8 +134,10 @@
       };
       "lsp" = {
         "rust-analyzer" = {
-          "binary" = {
-            "path" = "rust-analyzer";
+          "initialization_options" = {
+            "check" = {
+              "command" = "clippy";
+            };
           };
         };
       };
