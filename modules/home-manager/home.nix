@@ -81,6 +81,33 @@
     boxbuddy
   ];
 
+  programs.zed-editor = {
+    enable = true;
+    extensions = [
+      "nix"
+      "toml"
+      "rust"
+    ];
+    userSettings = {
+      "vim_mode" = true;
+      "ui_font_size" = 16;
+      "buffer_font_size" = 16;
+      "format_on_save" = "on";
+      "theme" = {
+        "mode" = "system";
+        "light" = "One Light";
+        "dark" = "One Dark";
+      };
+      "lsp" = {
+        "rust-analyzer" = {
+          "binary" = {
+            "path" = "rust-analyzer";
+          };
+        };
+      };
+    };
+  };
+
   home.stateVersion = "24.05";
 
 }
