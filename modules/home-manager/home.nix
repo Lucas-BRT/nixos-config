@@ -48,6 +48,7 @@
     asciinema
     helix
     zellij
+    btop
 
     # Languages
     cargo-watch
@@ -83,6 +84,7 @@
     telegram-desktop
     mission-center
     boxbuddy
+    ladybird
   ];
 
   programs.zed-editor = {
