@@ -24,10 +24,9 @@
     cosmic-ext-tweaks
   ];
 
-  fonts.packages = with pkgs; [
-    fira-code
-    fira-code-symbols
-  ];
+  environment.variables = {
+    PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
+  };
 
   programs.nix-ld = {
     enable = true;
