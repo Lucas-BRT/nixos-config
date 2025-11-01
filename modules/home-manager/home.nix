@@ -49,6 +49,7 @@
     helix
     zellij
     btop
+    poetry
 
     # Languages
     cargo-watch
