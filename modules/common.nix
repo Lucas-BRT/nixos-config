@@ -22,10 +22,13 @@
     distrobox
     cosmic-ext-calculator
     cosmic-ext-tweaks
+    pkg-config
   ];
 
   environment.variables = {
-    PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
+    PKG_CONFIG_PATH = [
+      "${pkgs.openssl.dev}/lib/pkgconfig"
+    ];
   };
 
   programs.nix-ld = {

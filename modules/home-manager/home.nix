@@ -42,7 +42,6 @@
     libpq
     clang
     gemini-cli
-    pkg-config
     zola
     vivaldi
     asciinema
@@ -50,6 +49,7 @@
     zellij
     btop
     poetry
+    gimp
 
     # Languages
     cargo-watch
