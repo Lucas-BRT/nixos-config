@@ -22,6 +22,7 @@
     distrobox
     cosmic-ext-calculator
     cosmic-ext-tweaks
+    cosmic-store
     pkg-config
   ];
 
