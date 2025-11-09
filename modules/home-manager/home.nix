@@ -50,6 +50,8 @@
     btop
     poetry
     gimp
+    insomnia
+    upscayl
 
     # Languages
     cargo-watch
