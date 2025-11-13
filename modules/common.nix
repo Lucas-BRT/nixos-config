@@ -23,6 +23,7 @@
     cosmic-ext-calculator
     cosmic-ext-tweaks
     cosmic-store
+    cosmic-wallpapers
     pkg-config
   ];
 
