@@ -49,7 +49,6 @@
     helix
     zellij
     btop
-    poetry
     gimp
     insomnia
     upscayl
@@ -62,8 +61,6 @@
     cargo-audit
     cargo-nextest
     rustup
-    cabal-install
-    ghc
     nodejs_24
     python314
     nil

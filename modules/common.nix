@@ -14,6 +14,10 @@
     "flakes"
   ];
 
+  # Optimize Storage
+  nix.optimise.automatic = true;
+  nix.settings.auto-optimise-store = true;
+
   # System Packages
   environment.systemPackages = with pkgs; [
     fish
