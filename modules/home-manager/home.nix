@@ -42,6 +42,7 @@
     libpq
     clang
     gemini-cli
+    postgresql
     zola
     vivaldi
     asciinema
