@@ -55,6 +55,7 @@
     mise
     krita
     fastfetch
+    vlc
 
     # Languages
     cargo-watch
@@ -62,6 +63,7 @@
     cargo-outdated
     cargo-audit
     cargo-nextest
+    wasm-pack
     rustup
     nodejs_24
     python314
