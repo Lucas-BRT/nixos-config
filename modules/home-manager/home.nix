@@ -53,6 +53,8 @@
     insomnia
     upscayl
     mise
+    krita
+    fastfetch
 
     # Languages
     cargo-watch
@@ -77,9 +79,9 @@
 
     # Utils
     firefox
-    bitwarden
+    bitwarden-desktop
     zed-editor
-    onlyoffice-bin
+    onlyoffice-desktopeditors
     obsidian
     megasync
     sqlx-cli
@@ -87,6 +89,7 @@
     mission-center
     boxbuddy
     ladybird
+    gnome-calculator
   ];
 
   programs.zed-editor = {

@@ -24,7 +24,6 @@
     curl
     openssl
     distrobox
-    cosmic-ext-calculator
     cosmic-ext-tweaks
     cosmic-store
     cosmic-wallpapers
