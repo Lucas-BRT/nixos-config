@@ -12,9 +12,12 @@
 
   time.timeZone = "America/Fortaleza";
 
+  programs.fish.enable = true;
+
   users.users.lucasbrt = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
+    shell = pkgs.fish;
   };
 
   services.openssh.enable = true;

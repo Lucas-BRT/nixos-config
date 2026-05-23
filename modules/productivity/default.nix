@@ -16,5 +16,8 @@
 
     # Creative
     gimp
+
+    # Utilities
+    gnome-disk-utility
   ];
 }
