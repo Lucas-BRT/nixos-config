@@ -5,10 +5,10 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -16,6 +16,26 @@
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  # Intel Arc Xe (Meteor Lake) - enable GuC/HuC for better performance and power savings
+  boot.kernelParams = [ "i915.enable_guc=3" ];
+
+  # Firmware
+  hardware.enableRedistributableFirmware = true;
+
+  # Intel graphics - VA-API / Quick Sync
+  hardware.graphics.extraPackages = with pkgs; [
+    intel-media-driver
+    vpl-gpu-rt
+    intel-compute-runtime
+  ];
+
+  environment.variables.LIBVA_DRIVER_NAME = "iHD";
+
+  # Power management (disable power-profiles-daemon, conflicts with auto-cpufreq)
+  services.power-profiles-daemon.enable = false;
+  services.auto-cpufreq.enable = true;
+  services.thermald.enable = true;
 
   networking.hostName = "vivobook-s14"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -58,8 +78,11 @@
   users.users.lucasbrt = {
     isNormalUser = true;
     description = "lucasbrt";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    packages = with pkgs; [ ];
   };
 
   # Allow unfree packages
@@ -68,12 +91,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-    cosmic-store
-    cosmic-files
-    cosmic-edit
-    cosmic-player
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -103,16 +122,7 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11"; # Did you read the comment?
 
-  # Setup do Cosmic
   services.desktopManager.cosmic.enable = true;
   services.displayManager.cosmic-greeter.enable = true;
-  services.system76-scheduler.enable = true;
-  environment.sessionVariables.COSMIC_DATA_CONTROL_ENABLED = 1;
-
-  # Setup ao Flatpak
-  services.flatpak.enable = true;
-
-  # Setup do nix para não ficar puto
-  nix.settings.experimental-features = ["nix-command" "flakes"];
 
 }
