@@ -55,4 +55,25 @@
   services.power-profiles-daemon.enable = false;
   services.auto-cpufreq.enable = true;
   services.thermald.enable = true;
+
+  # RTL8852BE WiFi D3cold suspend/resume workaround.
+  # BIOS does not recover the card from D3cold after resume; D3hot works fine.
+  # References:
+  #   https://github.com/Lucas-BRT/rtl8852be-suspend-fix/blob/main/rtl8852be-suspend-fix.fish
+  #   https://bugs.launchpad.net/ubuntu/+source/linux-hwe-6.14/+bug/2127051
+  systemd.services.rtl8852be-d3cold-fix = {
+    description = "RTL8852BE WiFi D3cold suspend workaround";
+    wantedBy = [ "multi-user.target" ];
+    path = [ pkgs.pciutils pkgs.gnugrep pkgs.gawk ];
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+    };
+    script = ''
+      pci_addr=$(lspci -D | grep -i "RTL8852BE" | awk '{print $1}')
+      [ -z "$pci_addr" ] && exit 0
+      attr="/sys/bus/pci/devices/$pci_addr/d3cold_allowed"
+      [ -f "$attr" ] && echo 0 > "$attr"
+    '';
+  };
 }
