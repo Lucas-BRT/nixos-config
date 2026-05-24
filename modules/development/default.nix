@@ -4,7 +4,11 @@
   imports = [ ./zed ];
 
   programs.mise.enable = true;
-  programs.fish.enable = true;
+
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = "fastfetch";
+  };
 
   home.packages = with pkgs; [
     claude-code
@@ -14,5 +18,6 @@
     zola
     insomnia
     boxbuddy
+    fastfetch
   ];
 }
