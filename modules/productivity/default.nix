@@ -19,5 +19,6 @@
 
     # Utilities
     gnome-disk-utility
+    baobab
   ];
 }
