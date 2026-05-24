@@ -78,6 +78,22 @@
         "scroll_debounce_ms" = 50;
         "toggle_on_modifiers_press" = null;
       };
+      "languages" = {
+        "Jinja2" = {
+          "external" = {
+            "command" = "djlint";
+            "arguments" = [
+              "--reformat"
+              "--profile"
+              "jinja"
+              "-"
+            ];
+          };
+        };
+      };
+      "file_types" = {
+        "Jinja2" = [ "**/*.html" ];
+      };
       "auto_signature_help" = true;
     };
   };
