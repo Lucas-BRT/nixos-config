@@ -22,6 +22,9 @@
 
   services.openssh.enable = true;
 
+  services.tailscale.enable = true;
+  networking.firewall.checkReversePath = "loose";
+
   environment.systemPackages = with pkgs; [
     git
     vim
