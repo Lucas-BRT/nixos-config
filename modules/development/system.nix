@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  fonts.packages = [ pkgs.nerd-fonts.fira-code ];
+
   environment.systemPackages = with pkgs; [
     openssl
     pkg-config
