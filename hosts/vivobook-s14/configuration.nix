@@ -59,6 +59,12 @@
   services.power-profiles-daemon.enable = true;
   services.thermald.enable = true;
 
+  # Battery charge limit to preserve long-term battery health (cap at 80%)
+  # BAT1 is the device exposed by this hardware; charge_control_start_threshold is not supported by this driver
+  systemd.tmpfiles.rules = [
+    "w /sys/class/power_supply/BAT1/charge_control_end_threshold - - - - 80"
+  ];
+
   # RTL8852BE WiFi D3cold suspend/resume workaround.
   # BIOS does not recover the card from D3cold after resume; D3hot works fine.
   # References:

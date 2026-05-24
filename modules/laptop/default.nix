@@ -9,7 +9,7 @@
 
   # Bluetooth
   hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
+  hardware.bluetooth.powerOnBoot = false;
 
   # Firmware updates (BIOS, drivers, embedded controllers)
   services.fwupd.enable = true;
@@ -21,9 +21,4 @@
   zramSwap.enable = true;
   zramSwap.algorithm = "zstd";
 
-  # Battery charge thresholds to preserve long-term battery health (40–80%)
-  systemd.tmpfiles.rules = [
-    "w /sys/class/power_supply/BAT0/charge_control_start_threshold - - - - 40"
-    "w /sys/class/power_supply/BAT0/charge_control_end_threshold - - - - 80"
-  ];
 }
