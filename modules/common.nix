@@ -27,6 +27,7 @@
     vim
     curl
     wget
+    yazi
   ];
 
   system.stateVersion = "25.11";
