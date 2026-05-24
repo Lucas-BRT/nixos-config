@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ../../modules/laptop/default.nix
     ../../modules/DE/cosmic.nix
     ../../modules/desktop/default.nix
     ../../modules/development/system.nix
@@ -54,9 +55,8 @@
 
   environment.variables.LIBVA_DRIVER_NAME = "iHD";
 
-  # Power management (disable power-profiles-daemon, conflicts with auto-cpufreq)
-  services.power-profiles-daemon.enable = false;
-  services.auto-cpufreq.enable = true;
+  # Power management: ppd integrates with COSMIC settings panel (Battery/Balanced/Performance profiles)
+  services.power-profiles-daemon.enable = true;
   services.thermald.enable = true;
 
   # RTL8852BE WiFi D3cold suspend/resume workaround.
