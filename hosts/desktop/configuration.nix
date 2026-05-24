@@ -12,7 +12,10 @@
   networking.networkmanager.enable = true;
 
   # Bootloader
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.limine = {
+    enable = true;
+    maxGenerations = 10;
+  };
   boot.loader.efi.canTouchEfiVariables = true;
 
   # AMD RX drivers

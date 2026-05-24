@@ -32,7 +32,10 @@
   console.keyMap = "br-abnt2";
 
   # Bootloader
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.limine = {
+    enable = true;
+    maxGenerations = 10;
+  };
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
