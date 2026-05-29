@@ -37,6 +37,8 @@
   boot.loader.limine = {
     enable = true;
     maxGenerations = 10;
+    style.wallpapers = [ ../../wallpapers/abstract-grayscale-layered-wavy-shapes.jpg ];
+    style.wallpaperStyle = "stretched";
   };
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
