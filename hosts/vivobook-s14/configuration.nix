@@ -11,6 +11,7 @@
 
   networking.hostName = "vivobook-s14";
   networking.networkmanager.enable = true;
+  systemd.services.NetworkManager-wait-online.enable = false;
 
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
@@ -72,8 +73,13 @@
   #   https://bugs.launchpad.net/ubuntu/+source/linux-hwe-6.14/+bug/2127051
   systemd.services.rtl8852be-d3cold-fix = {
     description = "RTL8852BE WiFi D3cold suspend workaround";
-    wantedBy = [ "multi-user.target" ];
-    path = [ pkgs.pciutils pkgs.gnugrep pkgs.gawk ];
+    wantedBy = [ "graphical.target" ];
+    after = [ "display-manager.service" ];
+    path = [
+      pkgs.pciutils
+      pkgs.gnugrep
+      pkgs.gawk
+    ];
     serviceConfig = {
       Type = "oneshot";
       RemainAfterExit = true;
