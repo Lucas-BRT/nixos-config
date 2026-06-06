@@ -28,7 +28,8 @@
         cosmic-wallpapers
         cosmic-workspaces-epoch
         pop-launcher
-        xdg-desktop-portal-cosmic;
+        xdg-desktop-portal-cosmic
+        ;
     })
   ];
 
