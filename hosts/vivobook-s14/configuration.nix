@@ -7,6 +7,7 @@
     ../../modules/DE/cosmic.nix
     ../../modules/desktop/default.nix
     ../../modules/development/system.nix
+    ../../modules/gaming/default.nix
   ];
 
   networking.hostName = "vivobook-s14";

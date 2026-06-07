@@ -5,7 +5,6 @@
     ../DE
     ../productivity
     ../development
-    ../gaming
   ];
 
   home.username = "lucasbrt";
