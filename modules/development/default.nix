@@ -19,5 +19,6 @@
     insomnia
     boxbuddy
     fastfetch
+    postman
   ];
 }
