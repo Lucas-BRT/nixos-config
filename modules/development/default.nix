@@ -20,5 +20,7 @@
     boxbuddy
     fastfetch
     postman
+    opencode
   ];
+
 }
